@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../passwordGeneration/style.css" />
+    <link rel="stylesheet" href="../passwordGeneration/reset.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@600&family=Inter:wght@400;600;800&display=swap"
+      rel="stylesheet"
+    />
+    <title>Gerador de Senha</title>
+  </head>
+  <body>
+    <main>
+      <section class="hero">
+        <h1 class="title">Gerador de Senha</h1>
+        <p class="subtitle">
+          Utilize o nosso gerador de senha e tenha uma senha forte e segura
+        </p>
+      </section>
+      <section class="box">
+        <div class="password">
+          <div class="text">
+            <input type="text" name="password" id="password" />
+          </div>
+          <div class="actions">
+            <button id="copy-1">
+              <img src="../PasswordGeneration/images/copy.svg" alt="Copy" />
+            </button>
+            <button id="renew">
+              <img src="../PasswordGeneration/images/renew.svg" alt="Renew" />
+            </button>
+          </div>
+        </div>
+        <div class="security-indicator">
+          <div id="security-indicator-bar" class="bar" style="width: 90%">
+        </div>
+        </div>
+      </section>
+      <input type="text" class="input" name="password" id="password" />
+      <input
+        type="range"
+        name="password-length"
+        id="password-length"
+        value="16"
+        min="4"
+        max="64"
+      />
+
+      <input type="checkbox" name="uppercase" id="uppercase" />
+      <input type="checkbox" name="lowercase" id="lowercase" />
+      <input type="checkbox" name="numbers" id="numbers" />
+      <input type="checkbox" name="symbols" id="symbols" />
+
+      <button id="generate">Gerar Senha</button>
+      <button id="copy-2">Copiar Senha</button>
+    </main>
+
+    <script async src="../passwordGeneration/script.js"></script>
+  </body>
+</html>
