@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../passwordGeneration/style.css" />
-    <link rel="stylesheet" href="../passwordGeneration/reset.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="reset.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -14,6 +14,7 @@
     />
     <title>Gerador de Senha</title>
   </head>
+
   <body>
     <main>
       <section class="hero">
@@ -29,37 +30,72 @@
           </div>
           <div class="actions">
             <button id="copy-1">
-              <img src="../PasswordGeneration/images/copy.svg" alt="Copy" />
+              <img
+                src="../images/copy.svg"
+                onclick="copiarSenha()"
+                alt="Copy"
+              />
             </button>
             <button id="renew">
-              <img src="../PasswordGeneration/images/renew.svg" alt="Renew" />
+              <img
+                src="../images/renew.svg"
+                onclick="mudarSenha()"
+                alt="Renew"
+              />
             </button>
           </div>
         </div>
         <div class="security-indicator">
-          <div id="security-indicator-bar" class="bar" style="width: 90%">
-        </div>
+          <div id="security-indicator-bar" class="bar" style="width: 90%"></div>
         </div>
       </section>
-      <input type="text" class="input" name="password" id="password" />
-      <input
-        type="range"
-        name="password-length"
-        id="password-length"
-        value="16"
-        min="4"
-        max="64"
-      />
-
-      <input type="checkbox" name="uppercase" id="uppercase" />
-      <input type="checkbox" name="lowercase" id="lowercase" />
-      <input type="checkbox" name="numbers" id="numbers" />
-      <input type="checkbox" name="symbols" id="symbols" />
-
-      <button id="generate">Gerar Senha</button>
-      <button id="copy-2">Copiar Senha</button>
+      <section class="box customize">
+        <div id="caixa-customize1">
+          <div class="actions">
+            <div class="password-length">
+              <p>
+                Tamanho:
+                <span
+                  oninput="mudarTextoTamanho()"
+                  class="password-length-text"
+                ></span>
+              </p>
+              <input
+                oninput="mudarTamanho()"
+                type="range"
+                name="password-length"
+                id="password-length"
+                value="16"
+                min="4"
+                max="64"
+              />
+            </div>
+            <div class="config">
+              <label class="checkbox-container">
+                <span class="text">Maiúsculas</span>
+                <input type="checkbox" id="uppercase-check" checked />
+                <span class="checkmark"></span>
+              </label>
+              <label class="checkbox-container">
+                <span class="text">Números</span>
+                <input type="checkbox" id="number-check" checked />
+                <span class="checkmark"></span>
+              </label>
+              <label class="checkbox-container">
+                <span class="text">Símbolos</span>
+                <input type="checkbox" id="symbol-check" checked />
+                <span class="checkmark"></span>
+              </label>
+            </div>
+            <div class="btns-style">
+              <button class="btns" id="generate" onclick="gerarSenha()">
+                Gerar Senha
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
-
-    <script async src="../passwordGeneration/script.js"></script>
+    <script async src="script.js"></script>
   </body>
 </html>
